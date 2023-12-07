@@ -83,3 +83,8 @@
   background: none;
   word-wrap: break-word;
 }
+
+.delete, .edit{
+  cursor: pointer;
+}
+
