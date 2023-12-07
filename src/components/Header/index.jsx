@@ -7,10 +7,8 @@ function Header ({children}) {
     
     return (
         <header className="header">
-            <Link className="header__title">Listaroo</Link>
-            
+            <Link className="header__title">Listaroo</Link>           
             {children}
-        
         </header>
     )
 }

@@ -1,60 +1,11 @@
-/* .task-card {
-  background: var(--light-gray);
-  display: flex;
-  flex-direction: column;
-  width: 22.8125rem;
-  border-radius: 0.8rem;
-}
-
-.task-card__title {
-  
-
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.task-card__text {
-  
-  overflow-y: hidden;
-  display: flex;
-  font-size: 1.375rem;
-  padding: 1rem;
-  width: 100%;
-  flex-direction: column;
-  background: var(--light-gray);
-}
-
-.task-card__save {
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: flex-end;
-  
-  border-radius: 0.8rem;
-}
-
-.task-card__save__button:hover {
-  cursor: pointer;
-  background: var(--medium-blue);
-}
-
-.add-task {
-  height: 2rem;
-  background: none;
-}
-
-#dark .add-task {
-  color: var(--white);
-} */
-
 
 /*Fazendo como formulario*/
 .task__form { 
   width: 15rem;
+  height: 10rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: var(--light-blue);
   overflow: hidden;
   padding: 1rem 1rem 0.2rem 1rem;
@@ -95,8 +46,4 @@
   align-self: center;
   cursor: pointer;
   color: var(--dark-blue);
-}
-
-::-webkit-calendar-picker-indicator {
-  /* display: none; */
 }

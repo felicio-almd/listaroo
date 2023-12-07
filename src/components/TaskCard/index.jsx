@@ -1,68 +1,73 @@
 import './TaskCard.css'
 import { Icon } from '@iconify/react';
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
+uuidv4();
 
 function TaskCard () {
-    // const [tasks, setTasks] = useState([]);
-    // const [newTask, setNewTask] = useState({ title: "title", description: "description" });
+    const [tasks, setTasks] = useState([]);
 
-    // function addTask () { //TESTE DE ADIÇÃO DE NOVA TASK 
-    //     const updatedTasks = [...tasks, newTask]; // Crie uma nova matriz com a tarefa adicionada
-    //     setTasks(updatedTasks); // Atualize o estado com a nova matriz
-    //     setNewTask({ title: "", description: "" }); // Limpe os campos de entrada
-    //     console.log(updatedTasks);
-    // }
+    const Tasks = () => {
+        const [newTask, setNewTask] = useState({ title: '', description: '' });
 
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            addTask(newTask);
+            setNewTask({ title: '', description: '' }); // Limpar os campos do novo formulário
+        };
+
+        const addTask = (task) => {
+            setTasks((prevTasks) => [...prevTasks, { ...task, id: uuidv4(), completed: false, isEditing: false }]);
+        };
+
+        return (
+            <>
+            <form onSubmit={handleSubmit} className="task__form">
+                <input
+                    type="text"
+                    className="task__title"
+                    placeholder="Titulo..."
+                    value={newTask.title}
+                    onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+                    required
+                />
+                <textarea
+                    type="text"
+                    className="task__description"
+                    placeholder="Descrição..."
+                    value={newTask.description}
+                    onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
+                    required
+                ></textarea>
+                <button type="submit" className="task__button__add">
+                    <Icon icon="material-symbols:add-box" width="32" height="32" />
+                </button>
+            </form>
+        
+            </>
+        );
+        
+    };
 
     return (
         <>
-            {/* <article className="task-card">
-                <h2 className="task-card__title">Title</h2>
-                <form className="task-card__form"> 
-                    <textarea className="task-card__text" id="task-description" name="task-description" rows="4" cols="50"></textarea>
-                    <input type="submit" value="Salvar Tarefa" /> 
-                </form>
+            
+            {tasks.map((task) => (
+                
+                    <form key={task.id} className='task__form'>
+                    <input type='text' className='task__title' placeholder='Titulo...' value={task.title} readOnly />
+                    <textarea type='text' className='task__description' placeholder='Descrição...' value={task.description} readOnly></textarea>
+                    {/* <button type="submit" className="task__button__add">
+                        <Icon icon="material-symbols:add-box" width="32" height="32" />
+                    </button> */}
+                    </form>
 
-                <button className="task-card__save"><Icon className="task-card__save__button" icon="material-symbols:save" width="32" height="32"/></button>
-            </article>
-            <button className="add-task" onClick={addTask}>
-                <Icon icon="material-symbols:add-box" width="32" height="32"/>
-            </button>      */}
-
-                <form action="" className='task__form'>
-                    <input type="text" className='task__title' placeholder='Titulo...' />
-                    <input type="text" className='task__description' placeholder='Descrição...' />
-                    <label htmlFor="end" className='task__date__label'> <span className='task__date__label'>Ate: </span><input type="date" className='task__time'/></label>
-                    <button type='submit' className='task__button__add'>
-                        <Icon icon="material-symbols:add-box" width="32" height="32"/>    
-                    </button>                
-                </form>  
-                <form action="" className='task__form'>
-                    <input type="text" className='task__title' placeholder='Titulo...' />
-                    <input type="text" className='task__description' placeholder='Descrição...' />
-                    <label htmlFor="end" className='task__date__label'> <span className='task__date__label'>Ate: </span><input type="date" className='task__time'/></label>
-                    <button type='submit' className='task__button__add'>
-                        <Icon icon="material-symbols:add-box" width="32" height="32"/>    
-                    </button>                
-                </form> 
-                <form action="" className='task__form'>
-                    <input type="text" className='task__title' placeholder='Titulo...' />
-                    <input type="text" className='task__description' placeholder='Descrição...' />
-                    <label htmlFor="end" className='task__date__label'> <span className='task__date__label'>Até: </span><input type="date" className='task__time'/></label>
-                    <button type='submit' className='task__button__add'>
-                        <Icon icon="material-symbols:add-box" width="32" height="32"/>    
-                    </button>                
-                </form>  
-                <form action="" className='task__form'>
-                    <input type="text" className='task__title' placeholder='Titulo...' />
-                    <input type="text" className='task__description' placeholder='Descrição...' />
-                    <label htmlFor="end" className='task__date__label'> <span className='task__date__label'>Ate: </span><input type="date" className='task__time'/></label>
-                    <button type='submit' className='task__button__add'>
-                        <Icon icon="material-symbols:add-box" width="32" height="32"/>    
-                    </button>                
-                </form>  
+                
+            ))}
+            <Tasks />
         </>
-    )
+    );
 }
 
-export default TaskCard
+export default TaskCard;
