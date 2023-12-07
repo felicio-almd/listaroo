@@ -1,4 +1,3 @@
-
 /*Fazendo como formulario*/
 .task__form { 
   width: 15rem;
@@ -17,18 +16,20 @@
 }
 
 .task__title{
+  padding: 0 5px;
   background: none;
   font-size: 20px;
   font-weight: bold;
 }
 
 .task__description{
-  border-radius: 1rem;
+  padding: 5px;
+  resize: none;
   height: 4rem;
   background: none;
   word-wrap: wrap;
 }
-.task__date__label{
+/* .task__date__label{
   font-size: 0.875rem;
 }
 .task__time {
@@ -39,11 +40,46 @@
 
 #dark .task__time {
   background-color: var(--dark-gray);
-}
+} */
 
 .task__button__add{
   background: none;
   align-self: center;
   cursor: pointer;
   color: var(--dark-blue);
+}
+
+/*PARA OS CARDS*/
+
+.task__card { 
+  width: 15rem;
+  height: 10rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-blue);
+  padding: 1rem 1rem 0.2rem 1rem;
+  gap: 8px;
+}
+
+#dark .task__card {
+  background-color: var(--medium-blue);
+}
+
+.task__card__title{
+  color: var(--text);
+  padding: 0 5px;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.task__card__description{
+  color: var(--text);
+  font-size: 1rem;
+  padding: 5px;
+  resize: none;
+  height: 4rem;
+  background: none;
+  word-wrap: break-word;
 }

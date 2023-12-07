@@ -1,9 +1,10 @@
 import "./Home.css"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
+import TodoWrapper from "../../components/Tasks/TodoWrapper"
 import { Toggle } from "../../components/Toggle"
 import { createContext, useEffect, useState } from "react"
-import TaskCard from "../../components/TaskCard"
+
 
 
 export const ThemeContext = createContext(null);
@@ -22,16 +23,15 @@ function Home () {
     
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            <div id={theme} className="body"> 
+            <div id={theme} className="home__body"> 
             <Header>
                 <Toggle
                     toggled={theme === 'dark'} // Atualizado para verificar o tema atual
-
                     toggleTheme={toggleTheme}
                 />   
             </Header> 
             <section className='container' >
-                <TaskCard />
+                <TodoWrapper />
             </section>           
             <Footer /> 
             </div>

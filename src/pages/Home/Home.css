@@ -1,9 +1,3 @@
-body {
-  font-size: 1.5rem;
-  /* background: var(--white); */
-}
-
-
 #light {
   background-color: var(--white);
 }
@@ -12,7 +6,7 @@ body {
   background-color: var(--black);
 }
 
-.body {
+.home__body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
