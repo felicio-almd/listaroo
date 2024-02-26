@@ -1,9 +1,13 @@
 .task__wrapper{
-  width: calc(4 * 16px + 5*240px);
+  padding: 1rem 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: calc(5* (15rem) + (10rem));
   text-align: center;
   gap: 1rem;
 }
+
+

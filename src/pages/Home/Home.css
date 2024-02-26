@@ -7,6 +7,7 @@
 }
 
 .home__body {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,12 +15,8 @@
   align-items: center;
 }
 
-.container {
-  width: calc(4 * 16px + 5*240px);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1rem;
+@media screen and (min-width: 1024px) {
+  .home__body {
+    
+  }
 }
