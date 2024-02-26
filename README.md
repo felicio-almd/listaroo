@@ -2,12 +2,14 @@
   <img src="./.github/app.gif" alt="Listaroo" />
 </div>
 
+
+
+<h1 align="center">Listaroo</h1>
+
 <h1 align="center">
 <p>SITE ON</p>
    <a target="_blank" href="https://listaroo.vercel.app/">Listaroo</a>
 </h1>
-
-<h1 align="center">Listaroo</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/felicio-almd/listaroo?color=56BEB8">
