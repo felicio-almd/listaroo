@@ -2,8 +2,8 @@
   <img src="./.github/app.gif" alt="Listaroo" />
 
   &#xa0;
-
-   <a href="https://listaroo.vercel.app/">LISTAROO</a> 
+## :dart: SITE ##
+   <a target="_blank" href="https://listaroo.vercel.app/">Listaroo</a> 
 </div>
 
 <h1 align="center">Listaroo</h1>
