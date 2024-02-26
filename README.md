@@ -47,7 +47,7 @@ ToDoList project using react to organize your life.
 
 :heavy_check_mark: Feature 1: Save with localStorage;\
 :heavy_check_mark: Feature 2: DarkMode;\
-:heavy_check_mark: Feature 3: Add, Edit and Delete tasks;
+:heavy_check_mark: Feature 3: Add, Edit and Complete tasks;
 
 ## :rocket: Technologies ##
 
