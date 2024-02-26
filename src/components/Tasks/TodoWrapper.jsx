@@ -23,6 +23,10 @@ export default function TodoWrapper() {
     setTodos(newTodos)
   }
 
+  function invertOrder () {
+    return [...todos].reverse()
+  }
+
   const updateTodo = (todoId, newValue) => {
     if(!newValue.text || /^\s*%/.test(newValue.text)) {
       return;
@@ -35,23 +39,14 @@ export default function TodoWrapper() {
     setTodos(removeTask)
   }
 
-  const completeTodo = id => {
-    let updatedTodos = todos.map (todo => {
-      if (todo.id === id) {
-        todo.isComplete = !todo.isComplete
-      } 
-      return todo
-    })
-    setTodos(updatedTodos)
-  }
-
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+
   return(
     <div className="task__wrapper">
-      <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
+      <Todo todos={invertOrder()} removeTodo={removeTodo} updateTodo={updateTodo}/>
       <TodoForm onSubmit={addTodo}/>   
     </div>
   )
