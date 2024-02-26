@@ -3,8 +3,9 @@
 
   &#xa0;
   
-## :dart: SITE 
-   <a target="_blank" href="https://listaroo.vercel.app/">Listaroo</a> 
+<h1>
+   <a target="_blank" href="https://listaroo.vercel.app/">Listaroo</a>
+</h1>
 </div>
 
 <h1 align="center">Listaroo</h1>
