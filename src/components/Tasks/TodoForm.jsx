@@ -68,7 +68,7 @@ function TodoForm(props) {
             maxLength={50}
             type="text"
             className="task__title"
-            placeholder="Tarefa..."
+            placeholder="Digite sua tarefa..."
             value={input}
             onChange={handleChange}
             ref={inputRef}
