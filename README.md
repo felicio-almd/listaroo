@@ -3,7 +3,7 @@
 
   &#xa0;
 
-   <a href="https://listaroo.netlify.app">LISTAROO</a> 
+   <a href="https://listaroo.vercel.app/">LISTAROO</a> 
 </div>
 
 <h1 align="center">Listaroo</h1>
@@ -14,8 +14,6 @@
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/felicio-almd/listaroo?color=56BEB8">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/felicio-almd/listaroo?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/felicio-almd/listaroo?color=56BEB8">
 
   
 </p>
