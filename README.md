@@ -7,7 +7,6 @@
 <h1 align="center">Listaroo</h1>
 
 <h1 align="center">
-<p>SITE ON</p>
    <a target="_blank" href="https://listaroo.vercel.app/">Listaroo</a>
 </h1>
 
