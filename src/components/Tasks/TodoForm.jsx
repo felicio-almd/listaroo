@@ -1,33 +1,68 @@
-import "./TaskCard.css";
+import "./TodoForm.css";
 import { Icon } from "@iconify/react";
+import { useEffect, useRef, useState } from "react";
 
-function TodoForm({ addTask, newTitle, setNewTitle, newTask, setNewTask }) {
-  const handleSubmit = (e) => {
+ import { v4 as uuidv4 } from "uuid";
+
+function TodoForm (props) {
+  const [input, setInput] = useState(props.edit ? props.edit.value : '');
+
+  const inputRef = useRef(null)
+
+  const handleChange = e => {
+    setInput(e.target.value)
+  }
+
+  const handleSubmit = e => {
     e.preventDefault();
-    addTask();
+
+    props.onSubmit({
+      id: uuidv4(),
+      text: input
+    })
+
+    setInput('');
   };
+
+  useEffect(() => {
+    inputRef.current.focus()
+  })
 
   return (
     <form onSubmit={handleSubmit} className="task__form">
-      <input
-        type="text"
-        className="task__title"
-        placeholder="Titulo..."
-        value={newTitle}
-        onChange={(e) => setNewTitle(e.target.value)}
-        required
-      />
-      <textarea
-        type="text"
-        className="task__description"
-        placeholder="Descrição..."
-        value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
-        required
-      ></textarea>
-      <button type="submit" className="task__button__add">
-        <Icon icon="material-symbols:add-box" width="32" height="32" />
-      </button>
+      {props.edit ? (
+      <>
+        <textarea
+          maxLength={50}
+          type="text"
+          className="task__title"
+          placeholder="Tarefa..."
+          value={input}
+          onChange={handleChange}
+          ref={inputRef}
+          required
+        />
+        <button type="submit" className="task__button__add">
+          <Icon icon="material-symbols:add-box" width="32" height="32" />
+        </button>
+      </>     
+      ) : (
+        <>
+        <textarea
+          maxLength={50}
+          type="text"
+          className="task__title"
+          placeholder="Tarefa..."
+          value={input}
+          onChange={handleChange}
+          ref={inputRef}
+          required
+        />
+        <button type="submit" className="task__button__add">
+          <Icon icon="material-symbols:add-box" width="32" height="32" />
+        </button>
+        </>
+      )}
     </form>
   );
 }

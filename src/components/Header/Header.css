@@ -13,6 +13,11 @@
     font-weight: 600;
     text-decoration: none;
     color: var(--black);
+    transition: 0.2s;
+}
+
+.header__title:hover {
+    transform: scale(1.03);
 }
 
 #dark .header__title {

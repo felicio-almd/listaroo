@@ -1,74 +1,58 @@
-import "./TaskCard.css";
-
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-
+import "./TodoWrapper.css";
+import { useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
-import TaskCard from "./TaskCard";
-import EditTodoForm from "./EditTodoForm";
+import Todo from "./Todo";
 
-function TodoWrapper() {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
-  const [newTitle, setNewTitle] = useState("");
-
-  const addTask = () => {
-    setTasks([
-      ...tasks,
-      {
-        id: uuidv4(),
-        title: newTitle,
-        description: newTask,
-        completed: false,
-        isEditing: false,
-      },
-    ]);
-    setNewTitle("");
-    setNewTask("");
-  };
-
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
-
-  const editTask = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, isEditing: !task.isEditing } : task
-      )
-    );
-  };
-
-  return (
-    <>
-      {tasks.map((task) =>
-        task.isEditing ? (
-          <EditTodoForm
-            editTask={editTask}
-            key={task.id}
-            id={task.id}
-            setTasks={setTasks}
-          />
-        ) : (
-          <TaskCard
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            description={task.description}
-            deleteTask={deleteTask}
-            editTask={() => editTask(task.id, task.title, task.description)}
-          />
-        )
-      )}
-      <TodoForm
-        addTask={addTask}
-        newTitle={newTitle}
-        setNewTitle={setNewTitle}
-        newTask={newTask}
-        setNewTask={setNewTask}
-      />
-    </>
-  );
+const getLocalStorage = () => {
+  let todos = localStorage.getItem('todos')
+  if (todos) {
+    return (todos = JSON.parse(localStorage.getItem('todos')))
+  } else {
+    return []
+  }
 }
 
-export default TodoWrapper;
+export default function TodoWrapper() {
+  const [todos, setTodos] = useState(getLocalStorage())
+
+  const addTodo = todo => {
+    if(!todo.text || /^\s*%/.test(todo.text)) {
+      return;
+    }
+    const newTodos = [todo, ...todos]
+    setTodos(newTodos)
+  }
+
+  const updateTodo = (todoId, newValue) => {
+    if(!newValue.text || /^\s*%/.test(newValue.text)) {
+      return;
+    }
+    setTodos(prev => prev.map(task => (task.id === todoId ? newValue : task)))
+  }
+
+  const removeTodo = id => {
+    const removeTask = [...todos].filter(todo => todo.id !== id)
+    setTodos(removeTask)
+  }
+
+  const completeTodo = id => {
+    let updatedTodos = todos.map (todo => {
+      if (todo.id === id) {
+        todo.isComplete = !todo.isComplete
+      } 
+      return todo
+    })
+    setTodos(updatedTodos)
+  }
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  return(
+    <div className="task__wrapper">
+      <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
+      <TodoForm onSubmit={addTodo}/>   
+    </div>
+  )
+}

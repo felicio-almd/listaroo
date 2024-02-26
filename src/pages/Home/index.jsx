@@ -1,9 +1,9 @@
 import "./Home.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import TodoWrapper from "../../components/Tasks/TodoWrapper";
-import { Toggle } from "../../components/Toggle";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import { Toggle } from "../../components/Toggle/Toggle";
 import { createContext, useEffect, useState } from "react";
+import TodoWrapper from "../../components/Tasks/TodoWrapper";
 
 export const ThemeContext = createContext(null);
 
@@ -27,10 +27,8 @@ function Home() {
             toggled={theme === "dark"} // Atualizado para verificar o tema atual
             toggleTheme={toggleTheme}
           />
-        </Header>
-        <section className="container">
-          <TodoWrapper />
-        </section>
+        </Header>      
+        <TodoWrapper />
         <Footer />
       </div>
     </ThemeContext.Provider>
