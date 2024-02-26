@@ -1,13 +1,11 @@
 <div align="center" id="top"> 
   <img src="./.github/app.gif" alt="Listaroo" />
+</div>
 
-  &#xa0;
-  
 <h1>
 <p>SITE ON</p>
    <a target="_blank" href="https://listaroo.vercel.app/">Listaroo</a>
 </h1>
-</div>
 
 <h1 align="center">Listaroo</h1>
 
