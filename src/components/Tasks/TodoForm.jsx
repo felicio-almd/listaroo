@@ -52,7 +52,7 @@ function TodoForm(props) {
             placeholder="Tarefa..."
             value={input}
             onChange={handleChange}
-            ref={inputRef}
+            // ref={inputRef}
             required
             onKeyDown={(e) => {
               if (isEnterPressed(e)) handleSubmit(e);
@@ -71,7 +71,7 @@ function TodoForm(props) {
             placeholder="Digite sua tarefa..."
             value={input}
             onChange={handleChange}
-            ref={inputRef}
+            // ref={inputRef}
             required
             onKeyDown={(e) => {
               if (isEnterPressed(e)) handleSubmit(e);
