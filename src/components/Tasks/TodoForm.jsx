@@ -27,6 +27,7 @@ function TodoForm(props) {
   // useEffect(() => {
   //   inputRef.current.focus();
   // });
+  // removendo focus
 
   function isEnterPressed(e) {
     let keycode = null;
