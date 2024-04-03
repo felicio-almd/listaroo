@@ -1,12 +1,14 @@
 <div align="center" id="top"> 
   <img src="./.github/app.gif" alt="Listaroo" />
-
-  &#xa0;
-
-   <a href="https://listaroo.netlify.app">LISTAROO</a> 
 </div>
 
+
+
 <h1 align="center">Listaroo</h1>
+
+<h1 align="center"> Site ON :
+   <a target="_blank" href="https://listaroo.vercel.app/">Listaroo</a>
+</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/felicio-almd/listaroo?color=56BEB8">
@@ -14,8 +16,6 @@
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/felicio-almd/listaroo?color=56BEB8">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/felicio-almd/listaroo?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/felicio-almd/listaroo?color=56BEB8">
 
   
 </p>
