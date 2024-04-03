@@ -1,13 +1,13 @@
 import "./TodoForm.css";
 import { Icon } from "@iconify/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : "");
 
-  const inputRef = useRef(null);
+  // const inputRef = useRef(null);
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -24,9 +24,9 @@ function TodoForm(props) {
     setInput("");
   };
 
-  useEffect(() => {
-    inputRef.current.focus();
-  });
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  // });
 
   function isEnterPressed(e) {
     let keycode = null;
@@ -68,7 +68,7 @@ function TodoForm(props) {
             maxLength={50}
             type="text"
             className="task__title"
-            placeholder="Tarefa..."
+            placeholder="Digite sua tarefa..."
             value={input}
             onChange={handleChange}
             ref={inputRef}
