@@ -29,6 +29,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  color: darkgray;
 }
 
 .span__icon__sun {
@@ -36,7 +37,8 @@
 }
 
 .span__icon__moon {
-  right: 4px;
+
+  right: 4.5px;
 }
 
 .span__toggle:before {
