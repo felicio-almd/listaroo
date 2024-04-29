@@ -1,5 +1,5 @@
-.task__wrapper{
-  padding: 1rem 0;
+.task__wrapper {
+  padding: 3rem 0 1rem 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -9,5 +9,3 @@
   text-align: center;
   gap: 1rem;
 }
-
-
