@@ -16,7 +16,7 @@ function Login() {
 
     return (
         <>
-            <main className='login__main'>
+            <form className='login__main' onSubmit={submitUsername}>
                 <article className='login__article'>
                     <h1 className='login__title'>Digite o seu nome</h1>
                     <input
@@ -27,14 +27,14 @@ function Login() {
                         onChange={(e) => setUsername(e.target.value)}
                     />
                     <button 
+                        type='submit'
                         className='login__button'
-                        onClick={submitUsername}
                         disabled={username.length === 0}
                     >
                         Entrar em seu ToDoList
                     </button>
                 </article>
-            </main>
+            </form>
             <Footer />
         </>
     );
