@@ -1,6 +1,6 @@
 import "./TodoForm.css";
 import { Icon } from "@iconify/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
