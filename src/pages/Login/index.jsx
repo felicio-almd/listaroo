@@ -1,7 +1,43 @@
-function Login () {
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import './Login.css';
+
+function Login() {
+    const [username, setUsername] = useState('');
+    const navigate = useNavigate()
+
+    const submitUsername = () => {
+        if (username.length > 0) {
+            localStorage.setItem('username', username);
+        }
+        navigate('/home')
+    };
+
     return (
-        <h1>Login</h1>  
-    )
+        <>
+            <main className='login__main'>
+                <article className='login__article'>
+                    <h1 className='login__title'>Digite o seu nome</h1>
+                    <input
+                        className="login__label"
+                        type="text"
+                        placeholder='Usuário...'
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <button 
+                        className='login__button'
+                        onClick={submitUsername}
+                        disabled={username.length === 0}
+                    >
+                        Entrar em seu ToDoList
+                    </button>
+                </article>
+            </main>
+            <Footer />
+        </>
+    );
 }
 
-export default Login
+export default Login;
