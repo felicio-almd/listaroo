@@ -22,6 +22,7 @@
   background-color: var(--light-blue);
   overflow: hidden;
   gap: 2px;
+  align-items: center;
 }
 
 #dark .task__card__main {
@@ -30,17 +31,29 @@
 
 .task__card__title {
   padding: 0 1rem;
+  max-width: 95%;
   width: 15rem;
   color: var(--text);
   background: none;
   font-size: 1.5rem;
   font-weight: 500;
   height: 80%;
-  overflow: hidden;
+  overflow: auto;
   word-wrap: break-word;
   resize: none;
   text-align: center;
   outline: none;
+}
+
+.task__card__title::-webkit-scrollbar {
+  width: 4px;
+  background-color: var(--dark-blue);
+  border-radius: 1rem;
+}
+
+.task__card__title::-webkit-scrollbar-thumb {
+  background: var(--medium-blue);
+  border-radius: 1rem;
 }
 
 .task__card__actions {
