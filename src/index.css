@@ -13,10 +13,13 @@
 :root {
   --black: #1F1F1F;
   --white: #FFFFFF;
-  --blue: #3533b9;
   --dark-blue: #241A6A;
   --medium-blue: #C3B3F3;
   --light-blue: #EEECFF;
+  --card-blue: #84b6f4;
+  --card-green: #92f392;
+  --card-yellow: #f9f99c;
+  --card-pink: #fdcae1;
 
   --dark-gray: #B3B3B3;
   --medium-gray: #D2D2D2;

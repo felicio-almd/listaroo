@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : "");
 
-  // const inputRef = useRef(null);
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -23,10 +22,6 @@ function TodoForm(props) {
 
     setInput("");
   };
-
-  // useEffect(() => {
-  //   inputRef.current.focus();
-  // });
 
   function isEnterPressed(e) {
     let keycode = null;
@@ -52,7 +47,6 @@ function TodoForm(props) {
             placeholder="Tarefa..."
             value={input}
             onChange={handleChange}
-            // ref={inputRef}
             required
             onKeyDown={(e) => {
               if (isEnterPressed(e)) handleSubmit(e);
@@ -71,7 +65,6 @@ function TodoForm(props) {
             placeholder="Digite sua tarefa..."
             value={input}
             onChange={handleChange}
-            // ref={inputRef}
             required
             onKeyDown={(e) => {
               if (isEnterPressed(e)) handleSubmit(e);
