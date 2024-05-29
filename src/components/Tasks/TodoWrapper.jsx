@@ -4,37 +4,25 @@ import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
 const getLocalStorage = () => {
-  let todos = localStorage.getItem('todos')
+  let todos = localStorage.getItem('todos');
   if (todos) {
-    return (todos = JSON.parse(localStorage.getItem('todos')))
+    return JSON.parse(localStorage.getItem('todos'));
   } else {
-    return []
+    return [];
   }
 }
 
 export default function TodoWrapper() {
   const [todos, setTodos] = useState(getLocalStorage());
 
-  const addTodo = todo => {
+  const addTodo = (todo) => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
-    const newTodo = { ...todo, color: generateRandomColor() };
+    const newTodo = { ...todo, color: todo.color };
     const newTodos = [newTodo, ...todos];
     setTodos(newTodos);
   };
-
-  function generateRandomColor(currentColor) {
-    const rootStyles = getComputedStyle(document.documentElement);
-    const colors = [
-      rootStyles.getPropertyValue('--card-blue').trim(),
-      rootStyles.getPropertyValue('--card-green').trim(),
-      rootStyles.getPropertyValue('--card-yellow').trim(),
-      rootStyles.getPropertyValue('--card-pink').trim()
-    ];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    return currentColor || randomColor;
-  }
 
   function invertOrder() {
     return [...todos].reverse();
@@ -47,7 +35,7 @@ export default function TodoWrapper() {
     setTodos(prev => prev.map(task => (task.id === todoId ? { ...newValue, color: task.color } : task)));
   }
 
-  const removeTodo = id => {
+  const removeTodo = (id) => {
     const removeTask = [...todos].filter(todo => todo.id !== id);
     setTodos(removeTask);
   }
